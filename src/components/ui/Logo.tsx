@@ -20,7 +20,7 @@ const Logo = () => {
         >
           <Code size={20} className="text-black" />
         </motion.div>
-        <span className="text-xl font-bold tracking-tight">Stefeny</span>
+        <span className="text-xl font-bold tracking-tight">GBOY</span>
       </motion.div>
     </Link>
   );
