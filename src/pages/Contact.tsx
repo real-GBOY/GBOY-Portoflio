@@ -46,10 +46,10 @@ const Contact = () => {
 			transition={{ duration: 0.5 }}
 			className='min-h-screen pt-24 pb-16'>
 			<Helmet>
-				<title>Contact | Stefeny</title>
+				<title>Contact | GBOY</title>
 				<meta
 					name='description'
-					content='Contact Stefeny for design collaborations and projects'
+					content='Contact GBOY for development collaborations and projects'
 				/>
 			</Helmet>
 

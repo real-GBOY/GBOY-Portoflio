@@ -17,10 +17,10 @@ const Home = () => {
 			exit={{ opacity: 0 }}
 			transition={{ duration: 0.5 }}>
 			<Helmet>
-				<title>Stefeny | Product Designer</title>
+				<title>GBOY</title>
 				<meta
 					name='description'
-					content='Freelance product designer with 12+ years of experience'
+					content='Full Stack Developer with experience in building modern web applications'
 				/>
 			</Helmet>
 

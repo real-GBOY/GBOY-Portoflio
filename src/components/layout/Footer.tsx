@@ -130,10 +130,10 @@ const Footer = () => {
 							Feel free to reach out if you want to collaborate or just say hi!
 						</p>
 						<a
-							href='mailto:your.email@example.com'
+							href='mailto:							mahmmoudnayel2004@gmail.com'
 							className='text-accent hover:underline'
 							aria-label='Send me an email'>
-							your.email@example.com
+							mahmmoudnayel2004@gmail.com
 						</a>
 					</motion.div>
 				</div>

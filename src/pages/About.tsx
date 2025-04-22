@@ -95,10 +95,10 @@ const About = () => {
 			transition={{ duration: 0.5 }}
 			className='pt-32 pb-24 bg-black'>
 			<Helmet>
-				<title>About | Stefeny</title>
+				<title>About | GBOY</title>
 				<meta
 					name='description'
-					content='About Stefeny - Product Designer with 12+ years of experience'
+					content='About GBOY - Full Stack Developer with experience in building modern web applications'
 				/>
 			</Helmet>
 
@@ -110,24 +110,39 @@ const About = () => {
 						transition={{ duration: 0.6 }}>
 						<h1 className='heading-lg mb-6'>About Me</h1>
 						<p className='paragraph mb-6'>
-							I'm Stefeny, a product designer with 12+ years of experience
-							specializing in creating intuitive and engaging digital
-							experiences. I work at the intersection of design, technology, and
-							business strategy to craft products that users love.
+							I'm Golden, a passionate designer and developer with a growing
+							focus on crafting smart, user-centered digital solutions. With a
+							background in leadership, innovation, and hands-on tech
+							experience, I bridge the gap between design, development, and
+							impact-driven strategy.
 						</p>
 						<p className='paragraph mb-6'>
-							My approach to design focuses on understanding user needs and
-							business goals to create solutions that are both beautiful and
-							functional. I believe that great design goes beyond aesthetics—it
-							solves real problems and creates meaningful experiences.
+							My design approach is all about understanding real user needs and
+							translating them into intuitive, functional experiences—especially
+							in projects that create social value. Whether I'm leading an
+							Enactus project, building web and mobile apps, or experimenting
+							with new tools, I aim to design not just for beauty, but for
+							purpose.
 						</p>
 						<p className='paragraph mb-8'>
-							When I'm not designing, you can find me exploring new places,
-							reading design books, or experimenting with new design tools and
-							techniques.
+							Outside of design and code, I'm often diving into new
+							technologies, exploring creative ideas, or learning something
+							new—currently tackling German and leveling up my C++
+							problem-solving game.
 						</p>
 
-						<Button icon={<Download size={18} />}>Download CV</Button>
+						<Button
+							icon={<Download size={18} />}
+							onClick={() => {
+								const link = document.createElement("a");
+								link.href = "/CV.pdf";
+								link.download = "GBOY_CV.pdf";
+								document.body.appendChild(link);
+								link.click();
+								document.body.removeChild(link);
+							}}>
+							Download CV
+						</Button>
 					</motion.div>
 
 					<motion.div
@@ -137,8 +152,8 @@ const About = () => {
 						transition={{ duration: 0.6, delay: 0.2 }}>
 						<div className='relative z-10 rounded-xl overflow-hidden h-[500px]'>
 							<img
-								src='https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg?auto=compress&cs=tinysrgb&w=800'
-								alt='Stefeny Working'
+								src='https://i.postimg.cc/NG3tcVmM/com-wallpaper.jpg'
+								alt='About Main Image'
 								className='w-full h-full object-cover'
 							/>
 						</div>
@@ -187,10 +202,9 @@ const About = () => {
 							/>
 
 							<p className='text-center text-white/70 max-w-3xl mx-auto mb-16 paragraph'>
-								I am from Pakistan and currently living in Karachi. I am doing
-								Bachelor's in Software engineering and I will graduate in the
-								year 2021. I am UI/UX designer and currently working as a
-								freelancer.
+								I am skilled in full-stack web development using technologies
+								like HTML, CSS, JavaScript, React, and Node.js, with hands-on
+								experience building responsive and dynamic websites
 							</p>
 
 							<div className='flex items-center gap-4 mb-8'>
