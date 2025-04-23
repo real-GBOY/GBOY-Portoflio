@@ -1,7 +1,7 @@
 /** @format */
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, Heart } from "lucide-react";
+import { Github, Linkedin, Twitter, Heart, Instagram } from "lucide-react";
 import Logo from "../ui/Logo";
 
 const Footer = () => {
@@ -49,38 +49,44 @@ const Footer = () => {
 							functionality.
 						</p>
 						<nav aria-label='Social media links'>
-							<div className='flex space-x-4'>
-								<motion.a
-									href='https://github.com/yourusername'
-									target='_blank'
-									rel='noopener noreferrer'
-									className='text-white/70 hover:text-white transition-colors'
-									whileHover={{ scale: 1.1 }}
-									whileTap={{ scale: 0.95 }}
-									aria-label='Visit my GitHub profile'>
-									<Github size={20} />
-								</motion.a>
-								<motion.a
-									href='https://linkedin.com/in/yourusername'
-									target='_blank'
-									rel='noopener noreferrer'
-									className='text-white/70 hover:text-white transition-colors'
-									whileHover={{ scale: 1.1 }}
-									whileTap={{ scale: 0.95 }}
-									aria-label='Visit my LinkedIn profile'>
-									<Linkedin size={20} />
-								</motion.a>
-								<motion.a
-									href='https://twitter.com/yourusername'
-									target='_blank'
-									rel='noopener noreferrer'
-									className='text-white/70 hover:text-white transition-colors'
-									whileHover={{ scale: 1.1 }}
-									whileTap={{ scale: 0.95 }}
-									aria-label='Visit my Twitter profile'>
-									<Twitter size={20} />
-								</motion.a>
-							</div>
+						<div className='hidden md:flex items-center space-x-6'>
+					<motion.a
+						href='https://github.com/cptnSUKUNA'
+						target='_blank'
+						rel='noopener noreferrer'
+						className='text-white/70 hover:text-white transition-colors'
+						whileHover={{ scale: 1.1 }}
+						whileTap={{ scale: 0.95 }}
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						transition={{ delay: 0.5 }}>
+						<Github size={20} />
+					</motion.a>
+					<motion.a
+						href='www.linkedin.com/in/mahmoud-mohamed-nayel-363b47222'
+						target='_blank'
+						rel='noopener noreferrer'
+						className='text-white/70 hover:text-white transition-colors'
+						whileHover={{ scale: 1.1 }}
+						whileTap={{ scale: 0.95 }}
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						transition={{ delay: 0.6 }}>
+						<Linkedin size={20} />
+					</motion.a>
+					<motion.a
+						href='https://www.instagram.com/__ma7moudnayel__/'
+						target='_blank'
+						rel='noopener noreferrer'
+						className='text-white/70 hover:text-white transition-colors'
+						whileHover={{ scale: 1.1 }}
+						whileTap={{ scale: 0.95 }}
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						transition={{ delay: 0.7 }}>
+						<Instagram size={20} />
+					</motion.a>
+				</div>
 						</nav>
 					</motion.div>
 

@@ -193,7 +193,7 @@ const About = () => {
 					viewport={{ once: true }}
 					transition={{ duration: 0.6 }}>
 					<div className='relative'>
-						<div className='absolute inset-0 bg-[#FFD700] skew-y-6 -z-10 opacity-10'></div>
+						{/* <div className='absolute inset-0 bg-[#FFD700] skew-y-6 -z-10 opacity-10'></div> */}
 						<div className='py-20'>
 							<AnimatedText
 								text='What I do'

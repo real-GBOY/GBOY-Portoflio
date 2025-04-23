@@ -24,13 +24,13 @@ const skills = [
 		id: 2,
 		title: "Backend Basics",
 		icon: <Server size={32} className='text-accent' />,
-		description: "Working with Node.js and Express for simple APIs.",
+		description: "Working with Node.js and Express for APIs.",
 	},
 	{
 		id: 3,
 		title: "Database Management",
 		icon: <Database size={32} className='text-accent' />,
-		description: "Basic SQL and working with MongoDB.",
+		description: "SQL and working with MongoDB.",
 	},
 	{
 		id: 4,
@@ -42,7 +42,7 @@ const skills = [
 		id: 5,
 		title: "Web Technologies",
 		icon: <Globe size={32} className='text-accent' />,
-		description: "HTML5, CSS3, and modern JavaScript.",
+		description: "React, Node.js, Express, MongoDB, and more.",
 	},
 	{
 		id: 6,

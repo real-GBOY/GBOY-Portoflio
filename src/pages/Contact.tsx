@@ -72,7 +72,7 @@ const Contact = () => {
 								<Mail className='text-accent' size={20} />
 								<div>
 									<p className='text-white/60 text-sm'>Email</p>
-									<p className='text-white'>hello@example.com</p>
+									<p className='text-white'>mahmmoudnayel2004@gmail.com</p>
 								</div>
 							</div>
 
@@ -80,7 +80,7 @@ const Contact = () => {
 								<MapPin className='text-accent' size={20} />
 								<div>
 									<p className='text-white/60 text-sm'>Location</p>
-									<p className='text-white'>Remote, Worldwide</p>
+									<p className='text-white'>Cairo, Egypt</p>
 								</div>
 							</div>
 
@@ -88,7 +88,7 @@ const Contact = () => {
 								<Phone className='text-accent' size={20} />
 								<div>
 									<p className='text-white/60 text-sm'>Phone</p>
-									<p className='text-white'>+1 (555) 123-4567</p>
+									<p className='text-white'>+20 1026597474</p>
 								</div>
 							</div>
 						</div>
