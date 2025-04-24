@@ -1,9 +1,9 @@
 /** @format */
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Github, Linkedin, Twitter, Instagram } from "lucide-react";
+import { Menu, X, Github, Linkedin, Instagram } from "lucide-react";
 import Logo from "../ui/Logo";
 
 const navItems = [
@@ -30,6 +30,18 @@ const Navbar = () => {
 	useEffect(() => {
 		setOpen(false);
 	}, [location]);
+
+	// Prevent body scroll when mobile menu is open
+	useEffect(() => {
+		if (open) {
+			document.body.style.overflow = "hidden";
+		} else {
+			document.body.style.overflow = "unset";
+		}
+		return () => {
+			document.body.style.overflow = "unset";
+		};
+	}, [open]);
 
 	const navVariants = {
 		hidden: { y: -100, opacity: 0 },
@@ -80,16 +92,18 @@ const Navbar = () => {
 	return (
 		<motion.header
 			className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-				scrolled ? "bg-black/80 backdrop-blur-md py-4" : "bg-transparent py-6"
+				scrolled
+					? "bg-black/80 backdrop-blur-md py-2 sm:py-3 md:py-4"
+					: "bg-transparent py-3 sm:py-4 md:py-6"
 			}`}
 			initial='hidden'
 			animate='visible'
 			variants={navVariants}>
-			<div className='container mx-auto px-6 flex justify-between items-center'>
+			<div className='container mx-auto px-4 sm:px-6 flex justify-between items-center'>
 				<Logo />
 
 				{/* Desktop Navigation */}
-				<nav className='hidden md:flex items-center space-x-10'>
+				<nav className='hidden md:flex items-center space-x-6 lg:space-x-8 xl:space-x-10'>
 					{navItems.map((item, i) => (
 						<motion.div
 							key={item.title}
@@ -99,7 +113,7 @@ const Navbar = () => {
 							variants={navItemVariants}>
 							<Link
 								to={item.path}
-								className={`link-hover text-lg transition-colors ${
+								className={`link-hover text-sm md:text-base lg:text-lg transition-colors ${
 									location.pathname === item.path
 										? "text-accent font-medium"
 										: "text-white/80 hover:text-white"
@@ -111,7 +125,7 @@ const Navbar = () => {
 				</nav>
 
 				{/* Social Links */}
-				<div className='hidden md:flex items-center space-x-6'>
+				<div className='hidden md:flex items-center space-x-4 lg:space-x-6'>
 					<motion.a
 						href='https://github.com/cptnSUKUNA'
 						target='_blank'
@@ -122,10 +136,10 @@ const Navbar = () => {
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						transition={{ delay: 0.5 }}>
-						<Github size={20} />
+						<Github size={18} className='w-4 h-4 lg:w-5 lg:h-5' />
 					</motion.a>
 					<motion.a
-						href='www.linkedin.com/in/mahmoud-mohamed-nayel-363b47222'
+						href='https://www.linkedin.com/in/mahmoud-mohamed-nayel-363b47222'
 						target='_blank'
 						rel='noopener noreferrer'
 						className='text-white/70 hover:text-white transition-colors'
@@ -134,7 +148,7 @@ const Navbar = () => {
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						transition={{ delay: 0.6 }}>
-						<Linkedin size={20} />
+						<Linkedin size={18} className='w-4 h-4 lg:w-5 lg:h-5' />
 					</motion.a>
 					<motion.a
 						href='https://www.instagram.com/__ma7moudnayel__/'
@@ -146,73 +160,81 @@ const Navbar = () => {
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						transition={{ delay: 0.7 }}>
-						<Instagram size={20} />
+						<Instagram size={18} className='w-4 h-4 lg:w-5 lg:h-5' />
 					</motion.a>
 				</div>
 
 				{/* Mobile Menu Button */}
 				<motion.button
-					className='md:hidden text-white z-50'
+					className='md:hidden text-white z-50 p-2'
 					onClick={() => setOpen(!open)}
-					whileTap={{ scale: 0.9 }}>
+					whileTap={{ scale: 0.9 }}
+					aria-label={open ? "Close menu" : "Open menu"}>
 					{open ? <X size={24} /> : <Menu size={24} />}
 				</motion.button>
 
 				{/* Mobile Menu */}
-				<motion.div
-					className={`fixed inset-0 bg-black/95 flex flex-col items-center justify-center z-40 md:hidden`}
-					initial='closed'
-					animate={open ? "open" : "closed"}
-					variants={mobileMenuVariants}>
-					<nav className='flex flex-col items-center space-y-8'>
-						{navItems.map((item, i) => (
-							<motion.div
-								key={item.title}
-								initial={{ opacity: 0, y: 20 }}
-								animate={open ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-								transition={{ delay: open ? i * 0.1 : 0 }}>
-								<Link
-									to={item.path}
-									className={`text-2xl font-medium transition-colors ${
-										location.pathname === item.path
-											? "text-accent"
-											: "text-white/80 hover:text-white"
-									}`}>
-									{item.title}
-								</Link>
-							</motion.div>
-						))}
-						<div className='flex space-x-8 mt-8'>
-							<motion.a
-								href='https://github.com'
-								target='_blank'
-								rel='noopener noreferrer'
-								className='text-white/70 hover:text-white transition-colors'
-								whileHover={{ scale: 1.1 }}
-								whileTap={{ scale: 0.95 }}>
-								<Github size={24} />
-							</motion.a>
-							<motion.a
-								href='https://linkedin.com'
-								target='_blank'
-								rel='noopener noreferrer'
-								className='text-white/70 hover:text-white transition-colors'
-								whileHover={{ scale: 1.1 }}
-								whileTap={{ scale: 0.95 }}>
-								<Linkedin size={24} />
-							</motion.a>
-							<motion.a
-								href='https://twitter.com'
-								target='_blank'
-								rel='noopener noreferrer'
-								className='text-white/70 hover:text-white transition-colors'
-								whileHover={{ scale: 1.1 }}
-								whileTap={{ scale: 0.95 }}>
-								<Twitter size={24} />
-							</motion.a>
-						</div>
-					</nav>
-				</motion.div>
+				<AnimatePresence>
+					{open && (
+						<motion.div
+							className={`fixed inset-0 bg-black/95 flex flex-col items-center justify-center z-40 md:hidden`}
+							initial='closed'
+							animate='open'
+							exit='closed'
+							variants={mobileMenuVariants}>
+							<nav className='flex flex-col items-center space-y-6 sm:space-y-8'>
+								{navItems.map((item, i) => (
+									<motion.div
+										key={item.title}
+										initial={{ opacity: 0, y: 20 }}
+										animate={{ opacity: 1, y: 0 }}
+										exit={{ opacity: 0, y: 20 }}
+										transition={{ delay: i * 0.1 }}>
+										<Link
+											to={item.path}
+											className={`text-xl sm:text-2xl font-medium transition-colors ${
+												location.pathname === item.path
+													? "text-accent"
+													: "text-white/80 hover:text-white"
+											}`}
+											onClick={() => setOpen(false)}>
+											{item.title}
+										</Link>
+									</motion.div>
+								))}
+								<div className='flex space-x-6 sm:space-x-8 mt-6 sm:mt-8'>
+									<motion.a
+										href='https://github.com/cptnSUKUNA'
+										target='_blank'
+										rel='noopener noreferrer'
+										className='text-white/70 hover:text-white transition-colors'
+										whileHover={{ scale: 1.1 }}
+										whileTap={{ scale: 0.95 }}>
+										<Github size={24} />
+									</motion.a>
+									<motion.a
+										href='https://www.linkedin.com/in/mahmoud-mohamed-nayel-363b47222'
+										target='_blank'
+										rel='noopener noreferrer'
+										className='text-white/70 hover:text-white transition-colors'
+										whileHover={{ scale: 1.1 }}
+										whileTap={{ scale: 0.95 }}>
+										<Linkedin size={24} />
+									</motion.a>
+									<motion.a
+										href='https://www.instagram.com/__ma7moudnayel__/'
+										target='_blank'
+										rel='noopener noreferrer'
+										className='text-white/70 hover:text-white transition-colors'
+										whileHover={{ scale: 1.1 }}
+										whileTap={{ scale: 0.95 }}>
+										<Instagram size={24} />
+									</motion.a>
+								</div>
+							</nav>
+						</motion.div>
+					)}
+				</AnimatePresence>
 			</div>
 		</motion.header>
 	);
