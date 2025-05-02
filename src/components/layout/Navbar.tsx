@@ -127,7 +127,7 @@ const Navbar = () => {
 				{/* Social Links */}
 				<div className='hidden md:flex items-center space-x-4 lg:space-x-6'>
 					<motion.a
-						href='https://github.com/cptnSUKUNA'
+						href='https://github.com/real-GBOY'
 						target='_blank'
 						rel='noopener noreferrer'
 						className='text-white/70 hover:text-white transition-colors'
@@ -177,7 +177,7 @@ const Navbar = () => {
 				<AnimatePresence>
 					{open && (
 						<motion.div
-							className={`fixed inset-0 bg-black/95 flex flex-col items-center justify-center z-40 md:hidden`}
+							className={`fixed inset-0 bg-black/95 flex flex-col items-center justify-center z-40 md:hidden h-[100vh]`}
 							initial='closed'
 							animate='open'
 							exit='closed'
