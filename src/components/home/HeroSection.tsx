@@ -5,7 +5,6 @@ import { ArrowDownCircle, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 import AnimatedText from "../ui/AnimatedText";
 import Button from "../ui/Button";
-import { jsPDF } from "jspdf";
 
 const HeroSection = () => {
 	const downloadCV = () => {
@@ -93,7 +92,7 @@ const HeroSection = () => {
 						transition={{ duration: 0.5 }}>
 						<div className='absolute inset-0 bg-gradient-to-br from-accent/5 to-accent-blue/10 z-0' />
 						<img
-							src='https://i.postimg.cc/SKm76T1T/Whats-App-Image-2025-04-19-at-15-51-05-85c4db21.jpg'
+							src='https://i.postimg.cc/0jF8gXh6/MainME.jpg'
 							alt='GBOY'
 							className='w-full h-full object-cover object-center'
 						/>
