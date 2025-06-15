@@ -147,7 +147,7 @@ const Footer = () => {
 				<motion.div
 					variants={itemVariants}
 					className='mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-white/10 text-center text-white/60 flex flex-col sm:flex-row justify-center items-center text-sm sm:text-base'>
-					<p>&copy; {year} Your Name. All Rights Reserved.</p>
+					<p>&copy; {year} GoldenBoy. All Rights Reserved.</p>
 				</motion.div>
 			</div>
 		</motion.footer>

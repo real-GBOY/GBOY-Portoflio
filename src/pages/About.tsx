@@ -63,27 +63,27 @@ const About = () => {
 	const experiences = [
 		{
 			id: 1,
-			year: "2020 - Present",
-			position: "Senior Product Designer",
-			company: "Freelance",
+			year: "2024 - Present",
+			position: "Full Stack Developer",
+			company: "Freelance ",
 			description:
-				"Working with clients worldwide to design intuitive and engaging digital products.",
+				"Developing scalable web apps using React, Node.js, Firebase, and MongoDB. Led impactful projects through Enactus, focusing on sustainability and innovation.",
 		},
 		{
 			id: 2,
-			year: "2017 - 2020",
-			position: "Lead UI/UX Designer",
-			company: "DesignStudio Inc.",
+			year: "2024 - Present",
+			position: "Full Stack Developer Intern",
+			company: "Route Academy",
 			description:
-				"Led the design team in creating user-centered design solutions for various clients.",
+				"Built responsive UIs with React and Bootstrap. Collaborated on real-world projects, improving performance and accessibility in team-based environments.",
 		},
 		{
 			id: 3,
-			year: "2013 - 2017",
-			position: "UI Designer",
-			company: "Creative Solutions",
+			year: "2024 - Present",
+			position: "Project Management & Development Leader",
+			company: "Enactus Menoufia",
 			description:
-				"Designed web and mobile interfaces for clients across different industries.",
+				"Led tech development for award-winning social entrepreneurship initiatives. Focused on creating web platforms that solve real community problems.",
 		},
 	];
 
@@ -110,25 +110,22 @@ const About = () => {
 						transition={{ duration: 0.6 }}>
 						<h1 className='heading-lg mb-6'>About Me</h1>
 						<p className='paragraph mb-6'>
-							I'm Golden, a passionate designer and developer with a growing
-							focus on crafting smart, user-centered digital solutions. With a
-							background in leadership, innovation, and hands-on tech
-							experience, I bridge the gap between design, development, and
-							impact-driven strategy.
+							I'm Golden, a full-stack developer passionate about building
+							efficient, user-friendly web applications. I specialize in using
+							modern technologies like React, Node.js, MongoDB, and Firebase to
+							create scalable and maintainable solutions.
 						</p>
 						<p className='paragraph mb-6'>
-							My design approach is all about understanding real user needs and
-							translating them into intuitive, functional experiences—especially
-							in projects that create social value. Whether I'm leading an
-							Enactus project, building web and mobile apps, or experimenting
-							with new tools, I aim to design not just for beauty, but for
-							purpose.
+							My development journey has been driven by hands-on projects, where
+							I’ve built responsive websites, functional APIs, and real-time
+							applications. I focus on writing clean, reusable code and crafting
+							intuitive user interfaces with performance in mind.
 						</p>
 						<p className='paragraph mb-8'>
-							Outside of design and code, I'm often diving into new
-							technologies, exploring creative ideas, or learning something
-							new—currently tackling German and leveling up my C++
-							problem-solving game.
+							I’m currently enhancing my problem-solving skills using C++,
+							exploring AI integration in web apps, and learning German. I’m
+							always eager to level up, experiment with new tools, and
+							contribute to impactful tech-driven solutions.
 						</p>
 
 						<Button
@@ -159,28 +156,28 @@ const About = () => {
 						</div>
 
 						<div className='absolute -bottom-6 -left-6 md:-left-10 bg-black p-6 rounded-lg border border-white/10 z-20 max-w-xs'>
-							<div className='flex justify-between mb-4'>
+							<div className='flex justify-around mb-4'>
 								<div className='flex flex-col items-center'>
 									<Award size={24} className='text-accent mb-2' />
-									<p className='text-2xl font-bold'>12+</p>
+									<p className='text-2xl font-bold'>2+</p>
 									<p className='text-white/70 text-sm'>Years Exp.</p>
 								</div>
 								<div className='flex flex-col items-center'>
 									<Clock size={24} className='text-accent mb-2' />
-									<p className='text-2xl font-bold'>500+</p>
+									<p className='text-2xl font-bold'>10+</p>
 									<p className='text-white/70 text-sm'>Projects</p>
 								</div>
-								<div className='flex flex-col items-center'>
+								{/* <div className='flex flex-col items-center'>
 									<Coffee size={24} className='text-accent mb-2' />
 									<p className='text-2xl font-bold'>∞</p>
 									<p className='text-white/70 text-sm'>Coffees</p>
-								</div>
+								</div> */}
 							</div>
 						</div>
 
 						<div className='absolute -top-6 -right-6 md:-right-10 bg-black p-4 rounded-lg border border-white/10 z-20'>
 							<Users size={24} className='text-accent mb-2' />
-							<p className='text-xl font-bold'>50+</p>
+							<p className='text-xl font-bold'>7+</p>
 							<p className='text-white/70 text-sm'>Happy Clients</p>
 						</div>
 					</motion.div>

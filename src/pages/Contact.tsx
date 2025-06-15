@@ -44,10 +44,10 @@ const Contact = () => {
 
 		try {
 			await emailjs.sendForm(
-				"service_v3g2kgc", // Replace with your EmailJS service ID
-				"template_5iwa87j", // Replace with your EmailJS template ID
+				"service_v3g2kgc", 
+				"template_5iwa87j", 
 				formRef.current!,
-				"aDH40t3RISIAaGX6L" // Replace with your EmailJS public key
+				"aDH40t3RISIAaGX6L" 
 			);
 
 			setMessageSent(true);
