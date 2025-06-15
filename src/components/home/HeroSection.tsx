@@ -5,7 +5,6 @@ import { ArrowDownCircle, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 import AnimatedText from "../ui/AnimatedText";
 import Button from "../ui/Button";
-import VantaEffect from "../VantaEffect";
 
 const HeroSection = () => {
 	const downloadCV = () => {
@@ -25,8 +24,9 @@ const HeroSection = () => {
 
 	return (
 		<section className='relative min-h-screen flex flex-col justify-center pt-16 pb-8 overflow-hidden'>
-			{/* Vanta Effect Background */}
-			<VantaEffect />
+			{/* Background blurs - positioned with better responsiveness */}
+			<div className='absolute top-1/4 right-[10%] sm:right-1/4 w-48 h-48 sm:w-72 sm:h-72 bg-accent-blue/30 rounded-full filter blur-[80px] sm:blur-[100px] z-0' />
+			<div className='absolute bottom-1/4 left-[10%] sm:left-1/4 w-48 h-48 sm:w-72 sm:h-72 bg-accent/20 rounded-full filter blur-[80px] sm:blur-[100px] z-0' />
 
 			{/* 90% width container with max-width constraints */}
 			<div className='w-[90%] sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 z-10 items-center '>
