@@ -109,31 +109,34 @@ const About = () => {
 						animate={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.6 }}>
 						<h1 className='heading-lg mb-6'>About Me</h1>
-						<p className='paragraph mb-6'>
-							I'm Golden, a full-stack developer passionate about building
-							efficient, user-friendly web applications. I specialize in using
-							modern technologies like React, Node.js, MongoDB, and Firebase to
-							create scalable and maintainable solutions.
-						</p>
-						<p className='paragraph mb-6'>
-							My development journey has been driven by hands-on projects, where
-							I’ve built responsive websites, functional APIs, and real-time
-							applications. I focus on writing clean, reusable code and crafting
-							intuitive user interfaces with performance in mind.
+						<p className='paragraph mb-8'>
+							I'm{" "}
+							<span className='inline-flex items-center font-mono'>
+								<span className='text-accent-blue'>&lt;</span>
+								<span className='text-accent font-bold mx-1'>Mahmoud</span>
+								<span className='text-accent-blue'>/</span>
+								<span className='text-accent font-bold mx-1'>Nayel</span>
+								<span className='text-accent-blue'>&gt;</span>
+							</span>
+							, a full-stack developer specialized in building scalable and
+							user-friendly web applications using React, Node.js, MongoDB, and
+							Firebase. Driven by hands-on projects, I write clean, efficient
+							code to create responsive frontends and robust backends, always
+							aiming to deliver seamless digital experiences.
 						</p>
 						<p className='paragraph mb-8'>
-							I’m currently enhancing my problem-solving skills using C++,
-							exploring AI integration in web apps, and learning German. I’m
-							always eager to level up, experiment with new tools, and
-							contribute to impactful tech-driven solutions.
+							Continuously sharpening my skills, I enjoy solving complex
+							problems and exploring new technologies to stay at the forefront
+							of modern web development. I'm passionate about crafting solutions
+							that not only work well but also provide real value to users.
 						</p>
 
 						<Button
 							icon={<Download size={18} />}
 							onClick={() => {
 								const link = document.createElement("a");
-								link.href = "/CV.pdf";
-								link.download = "GBOY_CV.pdf";
+								link.href = "/GoldenCV.pdf";
+								link.download = "GoldenCV.pdf";
 								document.body.appendChild(link);
 								link.click();
 								document.body.removeChild(link);
@@ -149,7 +152,7 @@ const About = () => {
 						transition={{ duration: 0.6, delay: 0.2 }}>
 						<div className='relative z-10 rounded-xl overflow-hidden h-[500px]'>
 							<img
-								src='https://i.postimg.cc/NG3tcVmM/com-wallpaper.jpg'
+								src='https://i.postimg.cc/c1mWVKsp/COpy.jpg'
 								alt='About Main Image'
 								className='w-full h-full object-cover'
 							/>

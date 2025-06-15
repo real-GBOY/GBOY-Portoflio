@@ -11,9 +11,9 @@ const HeroSection = () => {
 		// Create a link element
 		const link = document.createElement("a");
 		// Set the href to the CV file in the public folder
-		link.href = "/CV.pdf";
+		link.href = "./GoldenCV.pdf";
 		// Set the download attribute to force download
-		link.download = "GBOY_CV.pdf";
+		link.download = "GoldenCV.pdf";
 		// Append to body
 		document.body.appendChild(link);
 		// Trigger click
