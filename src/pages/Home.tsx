@@ -28,7 +28,7 @@ const Home = () => {
 			<HeroSection />
 			<SkillsSection />
 			<SelectedProjects />
-			<TestimonialsSection />
+			{/* <TestimonialsSection /> */}
 			<ContactCTA />
 		</motion.div>
 	);
