@@ -14,75 +14,48 @@ export interface Project {
 export const projects: Project[] = [
 	{
 		id: 1,
-		title: "E-Commerce Platform",
-		category: "Full Stack",
-		tags: ["React", "Node.js", "PostgreSQL"],
+		title: "Konuz Platform",
+		category: "Frontend",
+		tags: ["React", "Tailwind", "Framer Motion", "TypeScript"],
 		image:
-			"https://i.postimg.cc/NG3tcVmM/com-wallpaper.jpg",
+			"https://i.postimg.cc/fRDTQz2f/assets-task-01jxdsztmbf1dbnyxejx3g72vf-1749588982-img-0.webp",
 		description:
-			"A modern e-commerce platform built with React and Node.js, featuring real-time inventory management and secure payment processing.",
-		link: "https://ecommerce-demo.com",
-		github: "https://github.com/username/ecommerce",
+			"Konuz is a platform for authentic Egyptian handicrafts, connecting local artisans with buyers",
+		link: "https://knouz.vercel.app/",
+		github: "https://github.com/real-GBOY/KNOUZ.git",
 	},
 	{
 		id: 2,
-		title: "Task Management App",
+		title: "Weavolution",
 		category: "Frontend",
-		tags: ["React", "TypeScript", "Tailwind"],
+		tags: ["React", "TypeScript", "Tailwind", "Framer Motion"],
 		image:
-			"https://i.postimg.cc/NG3tcVmM/com-wallpaper.jpg",
+			"https://i.postimg.cc/XJC0ym1v/assets-task-01jxdtkx0aeryt8pxmxsq8swg5-1749589641-img-2.webp",
 		description:
-			"A responsive task management application with drag-and-drop functionality and real-time updates.",
-		link: "https://tasks-demo.com",
-		github: "https://github.com/username/task-manager",
+			"A Weavolution is a sustainable platform that upcycles textile waste into valuable products like MDF boards, yarn, and furniture.",
+		link: "https://wevo-project-mu.vercel.app/",
+		github: "https://github.com/real-GBOY/WevoProject.git",
 	},
+	
 	{
 		id: 3,
-		title: "Weather Dashboard",
-		category: "Frontend",
-		tags: ["React", "APIs", "Charts"],
+		title: "ShopNest",
+		category: "Full Stack",
+		tags: [
+			"React",
+			"APIs",
+			"Charts",
+			"Tailwind",
+			"Framer Motion",
+			"NodeJS",
+			"Express",
+		],
 		image:
-			"https://i.postimg.cc/NG3tcVmM/com-wallpaper.jpg",
+			"https://i.postimg.cc/bJzQGfwx/20250611-0031-Shop-Nest-Eco-Shopping-Elegance-simple-compose-01jxdw0hs0eqzay4tb01cvxnd4.png ",
 		description:
 			"Weather forecasting dashboard with interactive charts and location-based weather data visualization.",
-		link: "https://weather-demo.com",
-		github: "https://github.com/username/weather-app",
-	},
-	{
-		id: 4,
-		title: "Blog API",
-		category: "Backend",
-		tags: ["Node.js", "Express", "MongoDB"],
-		image:
-			"https://i.postimg.cc/NG3tcVmM/com-wallpaper.jpg",
-		description:
-			"RESTful API for a blog platform with authentication, comment system, and content management.",
-		link: "https://blog-api-docs.com",
-		github: "https://github.com/username/blog-api",
-	},
-	{
-		id: 5,
-		title: "Chat Application",
-		category: "Full Stack",
-		tags: ["React", "Socket.io", "Express"],
-		image:
-			"https://i.postimg.cc/NG3tcVmM/com-wallpaper.jpg",
-		description:
-			"Real-time chat application with private messaging, group chats, and file sharing capabilities.",
-		link: "https://chat-demo.com",
-		github: "https://github.com/username/chat-app",
-	},
-	{
-		id: 6,
-		title: "Portfolio Generator",
-		category: "Frontend",
-		tags: ["React", "Next.js", "MDX"],
-		image:
-			"https://i.postimg.cc/NG3tcVmM/com-wallpaper.jpg",
-		description:
-			"Developer portfolio generator with customizable themes and markdown content support.",
-		link: "https://portfolio-gen.com",
-		github: "https://github.com/username/portfolio-gen",
+		link: "https://nest-shop.vercel.app/",
+		github: "https://github.com/real-GBOY/fresh-cart.git",
 	},
 ];
 

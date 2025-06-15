@@ -1,8 +1,9 @@
 /** @format */
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
+import emailjs from "@emailjs/browser";
 import {
 	Mail,
 	MapPin,
@@ -12,9 +13,11 @@ import {
 	Linkedin,
 	CheckCircle,
 	Instagram,
+	Loader2,
 } from "lucide-react";
 
 const Contact = () => {
+	const formRef = useRef<HTMLFormElement>(null);
 	const [formState, setFormState] = useState({
 		name: "",
 		email: "",
@@ -22,6 +25,8 @@ const Contact = () => {
 	});
 
 	const [messageSent, setMessageSent] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
+	const [error, setError] = useState("");
 
 	const handleChange = (
 		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -32,22 +37,36 @@ const Contact = () => {
 		});
 	};
 
-	const handleSubmit = (e: React.FormEvent) => {
+	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
-		console.log(formState);
-		setMessageSent(true);
+		setIsLoading(true);
+		setError("");
 
-		// Reset form
-		setFormState({
-			name: "",
-			email: "",
-			message: "",
-		});
+		try {
+			await emailjs.sendForm(
+				"service_v3g2kgc", // Replace with your EmailJS service ID
+				"template_5iwa87j", // Replace with your EmailJS template ID
+				formRef.current!,
+				"aDH40t3RISIAaGX6L" // Replace with your EmailJS public key
+			);
 
-		// Reset message sent status after 3 seconds
-		setTimeout(() => {
-			setMessageSent(false);
-		}, 3000);
+			setMessageSent(true);
+			setFormState({
+				name: "",
+				email: "",
+				message: "",
+			});
+
+			// Reset message sent status after 3 seconds
+			setTimeout(() => {
+				setMessageSent(false);
+			}, 3000);
+		} catch (error) {
+			setError("Failed to send message. Please try again later.");
+			console.error("EmailJS error:", error);
+		} finally {
+			setIsLoading(false);
+		}
 	};
 
 	const contactItems = [
@@ -223,7 +242,10 @@ const Contact = () => {
 									<h2 className='text-2xl font-semibold mb-6 text-white'>
 										Send a Message
 									</h2>
-									<form onSubmit={handleSubmit} className='space-y-5'>
+									<form
+										ref={formRef}
+										onSubmit={handleSubmit}
+										className='space-y-5'>
 										{formFields.map((field) => (
 											<div key={field.name} className='space-y-1'>
 												<label
@@ -262,13 +284,22 @@ const Contact = () => {
 											/>
 										</div>
 
+										{error && <p className='text-red-500 text-sm'>{error}</p>}
+
 										<motion.button
 											type='submit'
-											className='w-full py-3 px-4 bg-gradient-to-r from-blue-500 to-blue-500 text-white font-medium rounded-lg flex items-center justify-center space-x-2 hover:from-blue-600 hover:to-blue-600 transition-all duration-200'
-											whileHover={{ scale: 1.01 }}
-											whileTap={{ scale: 0.98 }}>
-											<Send size={18} />
-											<span>Send Message</span>
+											disabled={isLoading}
+											className='w-full py-3 px-4 bg-gradient-to-r from-blue-500 to-blue-500 text-white font-medium rounded-lg flex items-center justify-center space-x-2 hover:from-blue-600 hover:to-blue-600 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed'
+											whileHover={{ scale: isLoading ? 1 : 1.01 }}
+											whileTap={{ scale: isLoading ? 1 : 0.98 }}>
+											{isLoading ? (
+												<Loader2 className='w-5 h-5 animate-spin' />
+											) : (
+												<>
+													<Send size={18} />
+													<span>Send Message</span>
+												</>
+											)}
 										</motion.button>
 									</form>
 								</>
