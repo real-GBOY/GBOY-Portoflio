@@ -11,6 +11,7 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Loading from "./components/ui/Loading";
 import ScrollToTop from "./components/ScrollToTop";
+import NotFound from "./pages/NotFound";
 
 function App() {
 	const [isLoading, setIsLoading] = useState(true);
@@ -47,6 +48,7 @@ function App() {
 						<Route path='/about' element={<About />} />
 						<Route path='/projects' element={<Projects />} />
 						<Route path='/contact' element={<Contact />} />
+						<Route path='*' element={<NotFound />} />
 					</Routes>
 				</AnimatePresence>
 			</Layout>
