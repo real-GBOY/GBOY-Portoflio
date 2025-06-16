@@ -67,7 +67,7 @@ const About = () => {
 			position: "Full Stack Developer",
 			company: "Freelance ",
 			description:
-				"Developing scalable web apps using React, Node.js, Firebase, and MongoDB. Led impactful projects through Enactus, focusing on sustainability and innovation.",
+				"Developing scalable web apps using React, Node.js, Firebase, and MongoDB. Led impactful projects, focusing on sustainability and innovation.",
 		},
 		{
 			id: 2,
