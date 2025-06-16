@@ -1,12 +1,7 @@
 /** @format */
 
 import { AnimatePresence } from "framer-motion";
-import {
-	Routes,
-	Route,
-	useLocation,
-	BrowserRouter as Router,
-} from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { useState, useEffect } from "react";
 import Layout from "./components/layout/Layout";
@@ -18,47 +13,44 @@ import Loading from "./components/ui/Loading";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
-	const location = useLocation();
 	const [isLoading, setIsLoading] = useState(true);
 	const [isNavigating, setIsNavigating] = useState(false);
+	const location = useLocation();
 
 	useEffect(() => {
-		// Initial load
+		// Simulate loading time
 		const timer = setTimeout(() => {
 			setIsLoading(false);
-		}, 1500);
+		}, 2000);
 
 		return () => clearTimeout(timer);
 	}, []);
 
 	useEffect(() => {
-		// Navigation between pages
 		setIsNavigating(true);
 		const timer = setTimeout(() => {
 			setIsNavigating(false);
-		}, 500);
+		}, 1000);
 
 		return () => clearTimeout(timer);
-	}, [location.pathname]);
+	}, [location]);
 
 	return (
-		<Router>
+		<HelmetProvider>
 			<ScrollToTop />
-			<HelmetProvider>
-				<Layout>
-					{isLoading && <Loading />}
-					<AnimatePresence mode='wait'>
-						{isNavigating && <Loading />}
-						<Routes location={location} key={location.pathname}>
-							<Route path='/' element={<Home />} />
-							<Route path='/about' element={<About />} />
-							<Route path='/projects' element={<Projects />} />
-							<Route path='/contact' element={<Contact />} />
-						</Routes>
-					</AnimatePresence>
-				</Layout>
-			</HelmetProvider>
-		</Router>
+			<Layout>
+				{isLoading && <Loading />}
+				<AnimatePresence mode='wait'>
+					{isNavigating && <Loading />}
+					<Routes location={location} key={location.pathname}>
+						<Route path='/' element={<Home />} />
+						<Route path='/about' element={<About />} />
+						<Route path='/projects' element={<Projects />} />
+						<Route path='/contact' element={<Contact />} />
+					</Routes>
+				</AnimatePresence>
+			</Layout>
+		</HelmetProvider>
 	);
 }
 
