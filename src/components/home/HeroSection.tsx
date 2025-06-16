@@ -54,7 +54,7 @@ const HeroSection = () => {
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						transition={{ duration: 0.8, delay: 1.0 }}>
-						Hi, I'm GBOY, a passionate Full-Stack Developer and freelance web
+						Hi, I'm Mahmoud Nayel, a passionate Full-Stack Developer and freelance web
 						creator with hands-on experience in building dynamic and
 						user-friendly applications.
 					</motion.p>
