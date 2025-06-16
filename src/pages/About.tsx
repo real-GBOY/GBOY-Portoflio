@@ -158,7 +158,7 @@ const About = () => {
 							/>
 						</div>
 
-						<div className='absolute -bottom-6 -left-6 md:-left-10 bg-black p-6 rounded-lg border border-white/10 z-20 max-w-xs'>
+						<div className='absolute -bottom-6 -left-6 md:-left-10 bg-black/40 backdrop-blur-md p-6 rounded-lg border border-white/10 z-20 max-w-xs'>
 							<div className='flex justify-around mb-4'>
 								<div className='flex flex-col items-center'>
 									<Award size={24} className='text-accent mb-2' />
@@ -178,7 +178,7 @@ const About = () => {
 							</div>
 						</div>
 
-						<div className='absolute -top-6 -right-6 md:-right-10 bg-black p-4 rounded-lg border border-white/10 z-20'>
+						<div className='absolute -top-6 -right-6 md:-right-10 bg-black/40 backdrop-blur-md p-4 rounded-lg border border-white/10 z-20'>
 							<Users size={24} className='text-accent mb-2' />
 							<p className='text-xl font-bold'>7+</p>
 							<p className='text-white/70 text-sm'>Happy Clients</p>
