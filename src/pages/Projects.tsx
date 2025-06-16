@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Helmet } from "react-helmet-async";
-import { ArrowUpRight, Github } from "lucide-react";
+import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
 import AnimatedText from "../components/ui/AnimatedText";
 import { projects, categories } from "../data/projects";
 
@@ -72,9 +72,12 @@ const Projects = () => {
 					layout>
 					<AnimatePresence>
 						{filteredProjects.map((project) => (
-							<motion.div
+							<motion.a
 								key={project.id}
-								className='group'
+								href={project.link}
+								target='_blank'
+								rel='noopener noreferrer'
+								className='group block bg-bg-card rounded-lg p-6 transition-all duration-300 hover:bg-white/5'
 								initial={{ opacity: 0, y: 30 }}
 								animate={{ opacity: 1, y: 0 }}
 								exit={{ opacity: 0, scale: 0.9 }}
@@ -84,7 +87,7 @@ const Projects = () => {
 								onHoverEnd={() => setHoveredId(null)}>
 								<div className='relative overflow-hidden rounded-lg aspect-[4/3] mb-6'>
 									<motion.div
-										className='absolute inset-0 bg-black/60 z-10 opacity-0 transition-opacity'
+										className='absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10 opacity-0 transition-opacity'
 										animate={{ opacity: hoveredId === project.id ? 1 : 0 }}
 									/>
 									<motion.img
@@ -118,39 +121,51 @@ const Projects = () => {
 										transition={{ duration: 0.3 }}>
 										<a
 											href={project.github}
-											className='w-12 h-12 rounded-full bg-white flex items-center justify-center'
+											className='w-12 h-12 rounded-full bg-white flex items-center justify-center hover:bg-accent transition-colors'
 											target='_blank'
 											rel='noopener noreferrer'
+											onClick={(e) => e.stopPropagation()}
 											aria-label={`View ${project.title} on GitHub`}>
 											<Github className='text-black' size={20} />
 										</a>
 										<a
 											href={project.link}
-											className='w-12 h-12 rounded-full bg-accent flex items-center justify-center'
+											className='w-12 h-12 rounded-full bg-accent flex items-center justify-center hover:bg-white transition-colors'
 											target='_blank'
 											rel='noopener noreferrer'
+											onClick={(e) => e.stopPropagation()}
 											aria-label={`Visit ${project.title} project`}>
-											<ArrowUpRight className='text-black' size={20} />
+											<ExternalLink className='text-black' size={20} />
 										</a>
 									</motion.div>
 								</div>
 
-								<h3 className='heading-sm mb-2 group-hover:text-accent transition-colors'>
-									{project.title}
-								</h3>
+								<div className='space-y-4'>
+									<div className='flex items-center justify-between'>
+										<h3 className='heading-sm group-hover:text-accent transition-colors'>
+											{project.title}
+										</h3>
+										<ArrowUpRight
+											className='text-accent opacity-0 group-hover:opacity-100 transition-opacity'
+											size={20}
+										/>
+									</div>
 
-								<div className='flex flex-wrap gap-2 mb-4'>
-									{project.tags.map((tag) => (
-										<span
-											key={tag}
-											className='px-3 py-1 bg-white/5 rounded-full text-sm text-white/70'>
-											{tag}
-										</span>
-									))}
+									<div className='flex flex-wrap gap-2'>
+										{project.tags.map((tag) => (
+											<span
+												key={tag}
+												className='px-3 py-1 bg-white/5 rounded-full text-sm text-white/70'>
+												{tag}
+											</span>
+										))}
+									</div>
+
+									<p className='paragraph text-white/70'>
+										{project.description}
+									</p>
 								</div>
-
-								<p className='paragraph'>{project.description}</p>
-							</motion.div>
+							</motion.a>
 						))}
 					</AnimatePresence>
 				</motion.div>
